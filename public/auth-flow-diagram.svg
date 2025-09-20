@@ -1,0 +1,131 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #4a5568; stroke-width: 2; rx: 8; ry: 8; }
+      .google-box { fill: #fef5e7; stroke: #d69e2e; }
+      .microsoft-box { fill: #e6fffa; stroke: #319795; }
+      .keycloak-box { fill: #fed7d7; stroke: #e53e3e; }
+      .text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; fill: #2d3748; }
+      .title { font-weight: bold; font-size: 14px; }
+      .arrow { stroke: #4a5568; stroke-width: 2; marker-end: url(#arrowhead); }
+      .step-number { fill: #667eea; font-weight: bold; font-size: 16px; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568" />
+    </marker>
+  </defs>
+  
+  <!-- Step Numbers -->
+  <text x="80" y="25" class="text step-number">1. User Input</text>
+  <text x="220" y="25" class="text step-number">2. Domain Detection</text>
+  <text x="380" y="25" class="text step-number">3. IDP Routing</text>
+  <text x="580" y="25" class="text step-number">4. Authentication</text>
+  
+  <!-- Google Flow -->
+  <g transform="translate(0, 50)">
+    <!-- User Input -->
+    <rect class="box" x="10" y="0" width="140" height="60"/>
+    <text x="80" y="20" class="text title" text-anchor="middle">Enter email:</text>
+    <text x="80" y="40" class="text" text-anchor="middle">user@gmail.com</text>
+    
+    <!-- Arrow 1 -->
+    <line class="arrow" x1="150" y1="30" x2="180" y2="30"/>
+    
+    <!-- Domain Detection -->
+    <rect class="box google-box" x="190" y="0" width="140" height="60"/>
+    <text x="260" y="20" class="text title" text-anchor="middle">gmail.com</text>
+    <text x="260" y="40" class="text" text-anchor="middle">= Google IDP</text>
+    
+    <!-- Arrow 2 -->
+    <line class="arrow" x1="330" y1="30" x2="360" y2="30"/>
+    
+    <!-- IDP Routing -->
+    <rect class="box google-box" x="370" y="0" width="140" height="60"/>
+    <text x="440" y="20" class="text title" text-anchor="middle">Redirect to</text>
+    <text x="440" y="40" class="text" text-anchor="middle">Google login</text>
+    
+    <!-- Arrow 3 -->
+    <line class="arrow" x1="510" y1="30" x2="540" y2="30"/>
+    
+    <!-- Authentication -->
+    <rect class="box google-box" x="550" y="0" width="140" height="60"/>
+    <text x="620" y="20" class="text title" text-anchor="middle">Google OAuth</text>
+    <text x="620" y="40" class="text" text-anchor="middle">Complete</text>
+  </g>
+  
+  <!-- Microsoft Flow -->
+  <g transform="translate(0, 150)">
+    <!-- User Input -->
+    <rect class="box" x="10" y="0" width="140" height="60"/>
+    <text x="80" y="20" class="text title" text-anchor="middle">Enter email:</text>
+    <text x="80" y="40" class="text" text-anchor="middle">user@outlook.com</text>
+    
+    <!-- Arrow 1 -->
+    <line class="arrow" x1="150" y1="30" x2="180" y2="30"/>
+    
+    <!-- Domain Detection -->
+    <rect class="box microsoft-box" x="190" y="0" width="140" height="60"/>
+    <text x="260" y="20" class="text title" text-anchor="middle">outlook.com</text>
+    <text x="260" y="40" class="text" text-anchor="middle">= Microsoft IDP</text>
+    
+    <!-- Arrow 2 -->
+    <line class="arrow" x1="330" y1="30" x2="360" y2="30"/>
+    
+    <!-- IDP Routing -->
+    <rect class="box microsoft-box" x="370" y="0" width="140" height="60"/>
+    <text x="440" y="20" class="text title" text-anchor="middle">Redirect to</text>
+    <text x="440" y="40" class="text" text-anchor="middle">Microsoft login</text>
+    
+    <!-- Arrow 3 -->
+    <line class="arrow" x1="510" y1="30" x2="540" y2="30"/>
+    
+    <!-- Authentication -->
+    <rect class="box microsoft-box" x="550" y="0" width="140" height="60"/>
+    <text x="620" y="20" class="text title" text-anchor="middle">Microsoft OAuth</text>
+    <text x="620" y="40" class="text" text-anchor="middle">Complete</text>
+  </g>
+  
+  <!-- Keycloak Flow -->
+  <g transform="translate(0, 250)">
+    <!-- User Input -->
+    <rect class="box" x="10" y="0" width="140" height="60"/>
+    <text x="80" y="20" class="text title" text-anchor="middle">Enter email:</text>
+    <text x="80" y="40" class="text" text-anchor="middle">user@test.com</text>
+    
+    <!-- Arrow 1 -->
+    <line class="arrow" x1="150" y1="30" x2="180" y2="30"/>
+    
+    <!-- Domain Detection -->
+    <rect class="box keycloak-box" x="190" y="0" width="140" height="60"/>
+    <text x="260" y="20" class="text title" text-anchor="middle">test.com</text>
+    <text x="260" y="40" class="text" text-anchor="middle">= Direct login</text>
+    
+    <!-- Arrow 2 -->
+    <line class="arrow" x1="330" y1="30" x2="360" y2="30"/>
+    
+    <!-- IDP Routing -->
+    <rect class="box keycloak-box" x="370" y="0" width="140" height="60"/>
+    <text x="440" y="20" class="text title" text-anchor="middle">Show Keycloak</text>
+    <text x="440" y="40" class="text" text-anchor="middle">login form</text>
+    
+    <!-- Arrow 3 -->
+    <line class="arrow" x1="510" y1="30" x2="540" y2="30"/>
+    
+    <!-- Authentication -->
+    <rect class="box keycloak-box" x="550" y="0" width="140" height="60"/>
+    <text x="620" y="20" class="text title" text-anchor="middle">Direct Keycloak</text>
+    <text x="620" y="40" class="text" text-anchor="middle">Authentication</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(20, 350)">
+    <rect class="box google-box" x="0" y="0" width="15" height="15"/>
+    <text x="25" y="12" class="text">Google OAuth Flow</text>
+    
+    <rect class="box microsoft-box" x="180" y="0" width="15" height="15"/>
+    <text x="205" y="12" class="text">Microsoft OAuth Flow</text>
+    
+    <rect class="box keycloak-box" x="380" y="0" width="15" height="15"/>
+    <text x="405" y="12" class="text">Keycloak Direct Flow</text>
+  </g>
+</svg>
