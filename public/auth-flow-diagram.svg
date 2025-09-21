@@ -87,10 +87,5 @@
     <text x="0" y="80" class="text">📧 user@company.com → Keycloak Direct → Landing Page</text>
   </g>
   
-  <!-- Port Information -->
-  <g transform="translate(600, 280)">
-    <text x="0" y="20" class="text title">Application Ports:</text>
-    <text x="0" y="40" class="text">🌐 React App: http://localhost:3001</text>
-    <text x="0" y="60" class="text">🔐 Keycloak: http://localhost:8080</text>
-  </g>
+
 </svg>
