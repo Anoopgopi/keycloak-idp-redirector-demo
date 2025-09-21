@@ -1,131 +1,100 @@
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="400" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .box { fill: #f8fafc; stroke: #4a5568; stroke-width: 2; rx: 8; ry: 8; }
-      .google-box { fill: #fef5e7; stroke: #d69e2e; }
-      .microsoft-box { fill: #e6fffa; stroke: #319795; }
-      .keycloak-box { fill: #fed7d7; stroke: #e53e3e; }
+      .client-box { fill: #e6f3ff; stroke: #2563eb; stroke-width: 2; rx: 8; ry: 8; }
+      .backend-box { fill: #f0f9ff; stroke: #0ea5e9; stroke-width: 2; rx: 8; ry: 8; }
+      .idp-container { fill: #f8fafc; stroke: #6b7280; stroke-width: 2; rx: 8; ry: 8; }
+      .google-section { fill: #fef5e7; stroke: #ea580c; stroke-width: 1; rx: 6; ry: 6; }
+      .microsoft-section { fill: #e0f2fe; stroke: #0284c7; stroke-width: 1; rx: 6; ry: 6; }
+      .keycloak-section { fill: #fef2f2; stroke: #dc2626; stroke-width: 1; rx: 6; ry: 6; }
+      .final-box { fill: #f0fff4; stroke: #16a34a; stroke-width: 2; rx: 8; ry: 8; }
       .text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px; fill: #2d3748; }
       .title { font-weight: bold; font-size: 14px; }
-      .arrow { stroke: #4a5568; stroke-width: 2; marker-end: url(#arrowhead); }
+      .small-text { font-size: 10px; }
+      .main-arrow { stroke: #4a5568; stroke-width: 3; marker-end: url(#arrowhead-main); }
       .step-number { fill: #667eea; font-weight: bold; font-size: 16px; }
+      .logo-text { font-size: 18px; font-weight: bold; }
     </style>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <marker id="arrowhead-main" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#4a5568" />
     </marker>
   </defs>
   
   <!-- Step Numbers -->
-  <text x="80" y="25" class="text step-number">1. User Input</text>
-  <text x="220" y="25" class="text step-number">2. Domain Detection</text>
-  <text x="380" y="25" class="text step-number">3. IDP Routing</text>
-  <text x="580" y="25" class="text step-number">4. Authentication</text>
+  <text x="80" y="25" class="text step-number">1. Client App</text>
+  <text x="280" y="25" class="text step-number">2. Backend Detection</text>
+  <text x="520" y="25" class="text step-number">3. Identity Providers</text>
+  <text x="750" y="25" class="text step-number">4. Landing Page</text>
   
-  <!-- Google Flow -->
-  <g transform="translate(0, 50)">
-    <!-- User Input -->
-    <rect class="box" x="10" y="0" width="140" height="60"/>
-    <text x="80" y="20" class="text title" text-anchor="middle">Enter email:</text>
-    <text x="80" y="40" class="text" text-anchor="middle">user@gmail.com</text>
-    
-    <!-- Arrow 1 -->
-    <line class="arrow" x1="150" y1="30" x2="180" y2="30"/>
-    
-    <!-- Domain Detection -->
-    <rect class="box google-box" x="190" y="0" width="140" height="60"/>
-    <text x="260" y="20" class="text title" text-anchor="middle">gmail.com</text>
-    <text x="260" y="40" class="text" text-anchor="middle">= Google IDP</text>
-    
-    <!-- Arrow 2 -->
-    <line class="arrow" x1="330" y1="30" x2="360" y2="30"/>
-    
-    <!-- IDP Routing -->
-    <rect class="box google-box" x="370" y="0" width="140" height="60"/>
-    <text x="440" y="20" class="text title" text-anchor="middle">Redirect to</text>
-    <text x="440" y="40" class="text" text-anchor="middle">Google login</text>
-    
-    <!-- Arrow 3 -->
-    <line class="arrow" x1="510" y1="30" x2="540" y2="30"/>
-    
-    <!-- Authentication -->
-    <rect class="box google-box" x="550" y="0" width="140" height="60"/>
-    <text x="620" y="20" class="text title" text-anchor="middle">Google OAuth</text>
-    <text x="620" y="40" class="text" text-anchor="middle">Complete</text>
+  <!-- Client App Block -->
+  <rect class="client-box" x="20" y="50" width="160" height="100"/>
+  <text x="100" y="75" class="text title" text-anchor="middle">📱 Client App</text>
+  <text x="100" y="95" class="text" text-anchor="middle">(Web/Mobile)</text>
+  <text x="100" y="115" class="text title" text-anchor="middle">Enter Email:</text>
+  <text x="100" y="135" class="text" text-anchor="middle">user@domain.com</text>
+  
+  <!-- Arrow to Backend -->
+  <line class="main-arrow" x1="180" y1="100" x2="220" y2="100"/>
+  
+  <!-- Backend Detection Block -->
+  <rect class="backend-box" x="230" y="50" width="180" height="100"/>
+  <text x="320" y="75" class="text title" text-anchor="middle">🔍 Application Backend</text>
+  <text x="320" y="95" class="text title" text-anchor="middle">Domain Detection</text>
+  <text x="320" y="115" class="text small-text" text-anchor="middle">gmail.com → Google</text>
+  <text x="320" y="130" class="text small-text" text-anchor="middle">outlook.com → Microsoft</text>
+  <text x="320" y="145" class="text small-text" text-anchor="middle">other → Keycloak</text>
+  
+  <!-- Single Arrow to IDP Container -->
+  <line class="main-arrow" x1="410" y1="100" x2="450" y2="100"/>
+  
+  <!-- IDP Hint Parameter Text -->
+  <text x="430" y="85" class="text small-text" text-anchor="middle" fill="#4a5568">idp_hint=</text>
+  <text x="430" y="95" class="text small-text" text-anchor="middle" fill="#ea580c">google</text>
+  <text x="445" y="95" class="text small-text" text-anchor="middle" fill="#4a5568">/</text>
+  <text x="460" y="95" class="text small-text" text-anchor="middle" fill="#0284c7">microsoft</text>
+  <text x="430" y="105" class="text small-text" text-anchor="middle" fill="#4a5568">or direct</text>
+  
+  <!-- Combined IDP Container Block -->
+  <rect class="idp-container" x="460" y="50" width="140" height="200"/>
+  <text x="530" y="75" class="text title" text-anchor="middle">🏢 Identity Providers</text>
+  
+  <!-- Google Section -->
+  <rect class="google-section" x="470" y="85" width="120" height="50"/>
+  <text x="530" y="105" class="logo-text" text-anchor="middle" fill="#ea580c">G</text>
+  <text x="530" y="125" class="text title" text-anchor="middle">Google OAuth</text>
+  
+  <!-- Microsoft Section -->
+  <rect class="microsoft-section" x="470" y="140" width="120" height="50"/>
+  <text x="530" y="160" class="logo-text" text-anchor="middle" fill="#0284c7">⊞</text>
+  <text x="530" y="180" class="text title" text-anchor="middle">Microsoft OAuth</text>
+  
+  <!-- Keycloak Section -->
+  <rect class="keycloak-section" x="470" y="195" width="120" height="50"/>
+  <text x="530" y="215" class="logo-text" text-anchor="middle" fill="#dc2626">🔐</text>
+  <text x="530" y="235" class="text title" text-anchor="middle">Keycloak Direct</text>
+  
+  <!-- Single Arrow to Final Landing -->
+  <line class="main-arrow" x1="600" y1="150" x2="640" y2="150"/>
+  
+  <!-- Final Landing Page Block -->
+  <rect class="final-box" x="650" y="100" width="180" height="100"/>
+  <text x="740" y="125" class="text title" text-anchor="middle">🏠 Application Landing</text>
+  <text x="740" y="145" class="text" text-anchor="middle">Welcome User!</text>
+  <text x="740" y="165" class="text" text-anchor="middle">user@domain.com</text>
+  <text x="740" y="185" class="text title" text-anchor="middle">Authenticated via [IDP]</text>
+  
+  <!-- Flow Examples -->
+  <g transform="translate(50, 280)">
+    <text x="0" y="20" class="text title">Example Flows:</text>
+    <text x="0" y="40" class="text">📧 user@gmail.com → Google OAuth → Landing Page</text>
+    <text x="0" y="60" class="text">📧 user@outlook.com → Microsoft OAuth → Landing Page</text>
+    <text x="0" y="80" class="text">📧 user@company.com → Keycloak Direct → Landing Page</text>
   </g>
   
-  <!-- Microsoft Flow -->
-  <g transform="translate(0, 150)">
-    <!-- User Input -->
-    <rect class="box" x="10" y="0" width="140" height="60"/>
-    <text x="80" y="20" class="text title" text-anchor="middle">Enter email:</text>
-    <text x="80" y="40" class="text" text-anchor="middle">user@outlook.com</text>
-    
-    <!-- Arrow 1 -->
-    <line class="arrow" x1="150" y1="30" x2="180" y2="30"/>
-    
-    <!-- Domain Detection -->
-    <rect class="box microsoft-box" x="190" y="0" width="140" height="60"/>
-    <text x="260" y="20" class="text title" text-anchor="middle">outlook.com</text>
-    <text x="260" y="40" class="text" text-anchor="middle">= Microsoft IDP</text>
-    
-    <!-- Arrow 2 -->
-    <line class="arrow" x1="330" y1="30" x2="360" y2="30"/>
-    
-    <!-- IDP Routing -->
-    <rect class="box microsoft-box" x="370" y="0" width="140" height="60"/>
-    <text x="440" y="20" class="text title" text-anchor="middle">Redirect to</text>
-    <text x="440" y="40" class="text" text-anchor="middle">Microsoft login</text>
-    
-    <!-- Arrow 3 -->
-    <line class="arrow" x1="510" y1="30" x2="540" y2="30"/>
-    
-    <!-- Authentication -->
-    <rect class="box microsoft-box" x="550" y="0" width="140" height="60"/>
-    <text x="620" y="20" class="text title" text-anchor="middle">Microsoft OAuth</text>
-    <text x="620" y="40" class="text" text-anchor="middle">Complete</text>
-  </g>
-  
-  <!-- Keycloak Flow -->
-  <g transform="translate(0, 250)">
-    <!-- User Input -->
-    <rect class="box" x="10" y="0" width="140" height="60"/>
-    <text x="80" y="20" class="text title" text-anchor="middle">Enter email:</text>
-    <text x="80" y="40" class="text" text-anchor="middle">user@test.com</text>
-    
-    <!-- Arrow 1 -->
-    <line class="arrow" x1="150" y1="30" x2="180" y2="30"/>
-    
-    <!-- Domain Detection -->
-    <rect class="box keycloak-box" x="190" y="0" width="140" height="60"/>
-    <text x="260" y="20" class="text title" text-anchor="middle">test.com</text>
-    <text x="260" y="40" class="text" text-anchor="middle">= Direct login</text>
-    
-    <!-- Arrow 2 -->
-    <line class="arrow" x1="330" y1="30" x2="360" y2="30"/>
-    
-    <!-- IDP Routing -->
-    <rect class="box keycloak-box" x="370" y="0" width="140" height="60"/>
-    <text x="440" y="20" class="text title" text-anchor="middle">Show Keycloak</text>
-    <text x="440" y="40" class="text" text-anchor="middle">login form</text>
-    
-    <!-- Arrow 3 -->
-    <line class="arrow" x1="510" y1="30" x2="540" y2="30"/>
-    
-    <!-- Authentication -->
-    <rect class="box keycloak-box" x="550" y="0" width="140" height="60"/>
-    <text x="620" y="20" class="text title" text-anchor="middle">Direct Keycloak</text>
-    <text x="620" y="40" class="text" text-anchor="middle">Authentication</text>
-  </g>
-  
-  <!-- Legend -->
-  <g transform="translate(20, 350)">
-    <rect class="box google-box" x="0" y="0" width="15" height="15"/>
-    <text x="25" y="12" class="text">Google OAuth Flow</text>
-    
-    <rect class="box microsoft-box" x="180" y="0" width="15" height="15"/>
-    <text x="205" y="12" class="text">Microsoft OAuth Flow</text>
-    
-    <rect class="box keycloak-box" x="380" y="0" width="15" height="15"/>
-    <text x="405" y="12" class="text">Keycloak Direct Flow</text>
+  <!-- Port Information -->
+  <g transform="translate(450, 280)">
+    <text x="0" y="20" class="text title">Application Ports:</text>
+    <text x="0" y="40" class="text">🌐 React App: http://localhost:3001</text>
+    <text x="0" y="60" class="text">🔐 Keycloak: http://localhost:8080</text>
   </g>
 </svg>
