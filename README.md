@@ -25,11 +25,6 @@ A React application demonstrating automatic identity provider routing based on e
 
 ![Authentication Flow Diagram](./public/auth-flow-diagram.svg)
 
-**Authentication Flow Process:**
-
-🔵 **Google Flow**: `user@gmail.com` → Domain Detection → Google OAuth → Complete  
-🟢 **Microsoft Flow**: `user@outlook.com` → Domain Detection → Microsoft OAuth → Complete  
-🔴 **Keycloak Flow**: `user@test.com` → Domain Detection → Direct Keycloak → Complete
 
 ## Architecture
 
@@ -257,13 +252,6 @@ src/
     └── pkce.test.js             # PKCE implementation tests
 ```
 
-##  What Makes This Special
-
-1. **Zero Provider Selection**: Users never choose between login buttons
-2. **Smart Domain Routing**: Automatic IDP detection from email
-3. **Enterprise Ready**: Easy to extend for company domains
-4. **Clean Architecture**: Single provider pattern, no complex registry
-5. **Production Ready**: Proper error handling and security
 
 ## Troubleshooting
 
