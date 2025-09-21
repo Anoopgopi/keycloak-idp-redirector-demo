@@ -45,32 +45,32 @@
   <text x="380" y="145" class="text small-text" text-anchor="middle">other → Keycloak</text>
   
   <!-- Arrow to IDP Container -->
-  <line class="main-arrow" x1="470" y1="100" x2="600" y2="100"/>
+  <line class="main-arrow" x1="470" y1="100" x2="580" y2="100"/>
   
   <!-- Login Hint Parameter Text -->
-  <text x="535" y="90" class="text small-text" text-anchor="middle" fill="#4a5568">login_hint</text>
+  <text x="525" y="90" class="text small-text" text-anchor="middle" fill="#4a5568">login_hint</text>
   
   <!-- Combined IDP Container Block -->
-  <rect class="idp-container" x="610" y="50" width="140" height="200"/>
+  <rect class="idp-container" x="590" y="50" width="180" height="200"/>
   <text x="680" y="75" class="text title" text-anchor="middle">🏢 Identity Providers</text>
   
   <!-- Google Section -->
-  <rect class="google-section" x="620" y="85" width="120" height="50"/>
+  <rect class="google-section" x="600" y="85" width="160" height="50"/>
   <text x="680" y="105" class="logo-text" text-anchor="middle" fill="#ea580c">G</text>
   <text x="680" y="125" class="text title" text-anchor="middle">Google OAuth</text>
   
   <!-- Microsoft Section -->
-  <rect class="microsoft-section" x="620" y="140" width="120" height="50"/>
+  <rect class="microsoft-section" x="600" y="140" width="160" height="50"/>
   <text x="680" y="160" class="logo-text" text-anchor="middle" fill="#0284c7">⊞</text>
   <text x="680" y="180" class="text title" text-anchor="middle">Microsoft OAuth</text>
   
   <!-- Keycloak Section -->
-  <rect class="keycloak-section" x="620" y="195" width="120" height="50"/>
+  <rect class="keycloak-section" x="600" y="195" width="160" height="50"/>
   <text x="680" y="215" class="logo-text" text-anchor="middle" fill="#dc2626">🔐</text>
   <text x="680" y="235" class="text title" text-anchor="middle">Keycloak Direct</text>
   
   <!-- Arrow to Final Landing -->
-  <line class="main-arrow" x1="750" y1="150" x2="880" y2="150"/>
+  <line class="main-arrow" x1="770" y1="150" x2="880" y2="150"/>
   
   <!-- Final Landing Page Block -->
   <rect class="final-box" x="890" y="100" width="180" height="100"/>
