@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor User
+rectangle "Domain Detection\n(gmail.com → Google, etc.)" as Domain
+rectangle "Keycloak with IDP Hint\n(google/microsoft/keycloak)" as KC
+rectangle "Identity Provider\n(Google/Microsoft)" as IdP
+rectangle "React App\nAuthenticated Session" as App
+
+User --> Domain
+Domain --> KC
+KC --> IdP
+IdP --> App
+
+@enduml
